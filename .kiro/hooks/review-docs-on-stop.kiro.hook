@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Review docs after changes",
+  "description": "Após execução do agente, verifica se docs/steering precisam ser atualizados baseado nas alterações feitas em scripts, configs ou estrutura de diretórios",
+  "version": "1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check if any .py scripts or any other relevant files, config.yaml, workflow files, or directory structure were modified in this session. Ignore changes to: prompts_md/*.md, results/, prod/, stag/, .env, *.ipynb, *.json. If relevant files were modified, review if any README.md, docs/, or .kiro/steering/ files need updating to reflect the changes. Only update what is genuinely outdated. If nothing relevant changed, do nothing silently."
+  }
+}

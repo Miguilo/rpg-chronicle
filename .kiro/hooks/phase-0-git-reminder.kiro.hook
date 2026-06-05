@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "name": "Phase 0 Git Reminder",
+  "description": "Reminds the developer to follow Phase 0 git workflow: atomic commits with Conventional Commits format, merge directly to main. TODO: When moving to Phase 1, update this hook to require PRs + CI green before merge.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.py",
+      "*.ts",
+      "*.tsx",
+      "*.sql"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A source file was just edited. Remind the developer about the Phase 0 git workflow: 1) Work on a feature branch (feat/xxx), 2) Make atomic commits using Conventional Commits format (feat:, fix:, refactor:, docs:, chore:), 3) Merge directly to main when the feature is working. No PRs needed yet — that comes in Phase 1. Keep main always functional."
+  }
+}

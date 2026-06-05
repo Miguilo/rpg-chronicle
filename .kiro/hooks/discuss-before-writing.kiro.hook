@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Discuss Before Writing",
+  "description": "Before writing any new file or making significant code changes, the agent must verify that the developer has been consulted on naming conventions, file structure, and implementation approach. Ensures the learning ritual (RESEARCH → ATTEMPT → REVIEW → ITERATE) is followed.",
+  "version": "1",
+  "when": {
+    "type": "preToolUse",
+    "toolTypes": [
+      "write"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Before writing this file, check: Is this a NEW file being created (not an edit to existing code)? If yes, have you already discussed with the developer: 1) The file/folder naming choice and WHY that name makes sense, 2) The class/function names and their responsibilities, 3) The general approach/pattern being used? If this discussion hasn't happened yet in this conversation, STOP the write operation and instead ask the developer questions like: \"I'm thinking of creating X at path Y — does that name communicate its purpose clearly to you? What would YOU name it?\" or \"This function will do Z — what name would you give it?\". Exception: skip this check for config files (.gitignore, package.json, pyproject.toml, turbo.json, .env.example), steering docs, hooks, and README updates."
+  }
+}
