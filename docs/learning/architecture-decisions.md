@@ -11,3 +11,10 @@ Notes on structural choices: where files live, how modules connect, separation o
 
 ---
 
+### Steering doc should be lean — context + tech only
+**Date:** 2026-06-09
+**Context:** Reviewing the rpg-chronicle.md steering file after Phase 0 pipeline completion
+**Answer/Decision:** Steering files should contain only what influences Kiro's behavior: project context, stack, structure, phases/checklists, schema, anti-patterns, commands, and agent rules. Educational content (concepts explained, learning questions, cost estimates) belongs in `docs/learning/` or the `helping-dev` skill — not in steering, which is read on every interaction and should stay focused.
+
+---
+
