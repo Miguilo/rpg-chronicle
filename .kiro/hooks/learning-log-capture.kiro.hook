@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Learning Log Capture",
+  "description": "After each agent interaction, analyzes the conversation for conceptual questions, architecture decisions, or explained concepts. If found, appends a structured entry to the appropriate topic file in docs/learning/. Ignores interactions that were only code reviews, git commands, or simple confirmations.",
+  "version": "1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Analyze the conversation that just happened. Did the developer ask a conceptual question, make an architecture/naming decision, or have a concept explained to them? If YES: 1) Check existing files in docs/learning/ to find the right topic file (python-patterns.md, architecture-decisions.md, git-workflow.md, concepts.md, or create a new topic file if needed). 2) Append a structured entry with format: ### [Question/Topic]\\n**Date:** [today]\\n**Context:** [what was being built]\\n**Answer/Decision:** [concise summary of what was explained or decided]\\n\\nIf the interaction was ONLY a code review, git command, simple confirmation, or file edit with no conceptual discussion — do nothing silently. Do NOT create entries for trivial exchanges."
+  }
+}
