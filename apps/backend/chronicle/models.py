@@ -5,8 +5,9 @@ class IngestRequest(BaseModel):
     transcription: str
     session_id: UUID
     session_title: str | None = None
+    campaign_id: UUID
 
 
 class IngestResponse(BaseModel):
     chunk_count: int
-    success: str
+    success: bool

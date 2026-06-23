@@ -12,6 +12,3 @@ def chunk_text(text: str, chunk_size: int = 1000, overlap: int = 200) -> list[di
 
     return chunks
 
-if __name__ == "__main__":
-    print(chunk_text("abcdefghij"))
-

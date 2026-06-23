@@ -1,0 +1,7 @@
+curl -X POST http://localhost:8001/ingest \
+  -H "Content-Type: application/json" \
+  -d '{
+    "transcription": "The party entered the dark cave. Theron drew his sword. A goblin appeared from the shadows.",
+    "session_id": "ac627866-5fca-4ab8-ae43-7c86095e5cab",
+    "campaign_id": "87e42d8f-4f5e-42b6-a08d-9a5a41b958ba"
+  }'
